@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://img.sanishtech.com/u/6cbe05262d1e51cc984a7e0b3a77162a.png" alt="Cover Image" width="650">
+  <img src="https://files.catbox.moe/wnh9aa.jpg" alt="Cover Image" width="650">
 </p>
 
 <h1 align="center">
