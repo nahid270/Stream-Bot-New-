@@ -18,8 +18,8 @@ VERIFIED_LOG = int(environ.get('VERIFIED_LOG', '-1002792118372'))  # Verified us
 SUPPORT_GROUP = int(environ.get("SUPPORT_GROUP", "-1001972036367"))
 
 # add admin IDs 11111 2222 3333 and add auth channel IDs -100XXX -100XXX -100XXX
-ADMINS = list(map(int, environ.get('ADMINS', '7528643689').split()))  # List of admin user IDs
-AUTH_CHANNEL = list(map(int, environ.get("AUTH_CHANNEL", "").split()))  # Allowed channels for authorization
+ADMINS = list(map(int, environ.get('ADMINS', '728528543').split()))  # List of admin user IDs
+AUTH_CHANNEL = list(map(int, environ.get("AUTH_CHANNEL", "-1002735342037").split()))  # Allowed channels for authorization
 
 # username add without @
 OWNER_USERNAME = environ.get("OWNER_USERNAME", 'Ctgmovies270')  # Owner's username
@@ -54,8 +54,8 @@ DB_NAME = environ.get('DATABASE_NAME', "cluster0")  # MongoDB database name
 QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/6afb4093d5ec5c4176979.jpg')  # QR Code image
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")  # Verify success image
 AUTH_PICS = environ.get('AUTH_PICS', 'https://envs.sh/AwV.jpg')  # Auth step image
-PICS = environ.get('PICS', 'https://files.catbox.moe/3cu7ov.jpg')  # Default info image
-FILE_PIC = environ.get('FILE_PIC', 'https://files.catbox.moe/3cu7ov.jpg') # file image 
+PICS = environ.get('PICS', 'https://i.ibb.co/p9N7X6R/photo-2025-10-28-07-23-34-7566169969528930340.jpg')  # Default info image
+FILE_PIC = environ.get('FILE_PIC', 'https://i.ibb.co/bj4My0bW/photo-2025-07-21-02-15-21-7529360175656861700.jpg') # file image 
 
 # 📝 File Captions
 FILE_CAPTION = environ.get('FILE_CAPTION', f"{script.CAPTION}")  # Caption for single file
@@ -71,7 +71,7 @@ VERIFY_EXPIRE = int(environ.get('VERIFY_EXPIRE', 60))  # Time (in hours) after w
 
 # ⚙️ Worker Configuration
 WORKERS = int(getenv('WORKERS', '4'))  # Number of async workers
-MULTI_CLIENT = False  # Enable multi-client handling (if needed)
+MULTI_CLIENT = True  # Enable multi-client handling (if needed)
 
 # 🔧 App/Heroku Configuration
 name = str(environ.get('name', 'avbotz'))  # Project name
@@ -83,11 +83,11 @@ else:
     ON_HEROKU = False
 
 # 🌐 Server Settings
-PORT = int(getenv('PORT', '2626'))  # Port for web server
-NO_PORT = str(getenv("NO_PORT", False)).lower() in ("true", "1", "yes")  # Disable port in URL
-HAS_SSL = str(getenv("HAS_SSL", False)).lower() in ("true", "1", "yes")  # Use HTTPS if True
-BIND_ADDRESS = getenv("WEB_SERVER_BIND_ADDRESS", "127.0.0.1")  # Server bind address
-FQDN = getenv("FQDN", "") or BIND_ADDRESS  # Full domain name or fallback to bind address
-PORT_SEGMENT = "" if NO_PORT else f":{PORT}/"  # Port in URL if not disabled
-PROTOCOL = "https" if HAS_SSL else "http"  # Protocol for URL
-URL = f"{PROTOCOL}://{FQDN}{PORT_SEGMENT}"  # Final generated base URL
+PORT = int(getenv('PORT', '2626'))
+NO_PORT = str(getenv("NO_PORT", False)).lower() in ("true", "1", "yes")
+HAS_SSL = str(getenv("HAS_SSL", False)).lower() in ("true", "1", "yes")
+BIND_ADDRESS = getenv("WEB_SERVER_BIND_ADDRESS", "127.0.0.1")
+FQDN = getenv("FQDN", "") or BIND_ADDRESS
+PORT_SEGMENT = "" if NO_PORT else f":{PORT}"
+PROTOCOL = "https" if HAS_SSL else "http"
+URL = f"{PROTOCOL}://{FQDN}{PORT_SEGMENT}/"
